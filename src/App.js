@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './App.module.scss';
+import Screen from './views/screen/Screen';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <div className={styles.textStyle}>Some styled text</div>
+    <div className={styles.App}>
+      <Screen
+        name="Andrew"
+      >
+      </Screen>
     </div>
   );
 }
