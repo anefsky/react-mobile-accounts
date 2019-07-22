@@ -67,3 +67,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # react-mobile-accounts
+
+------------------
+
+Adding node-sass to project: 
+- 'npm install node-sass': not working on my Mac.
+- using 'yarn add node-sass' instead. (Note: need to use 'sudo' before command on Mac.)
