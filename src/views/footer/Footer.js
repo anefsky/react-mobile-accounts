@@ -3,13 +3,23 @@ import styles from './Footer.module.scss';
 
 export default class Footer extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         return(
-            <div className={styles.textStyle}>In footer</div>
+            <div className={styles.container}>
+                <div
+                    onClick = { this.props.onShowMoreClick }
+                >
+                    Show more: { this.props.state.numberShown }
+                </div>
+            </div>
         );
     }
+
+    // handleClick() {
+    //     console.log('show more clicked');
+    // }
 }
