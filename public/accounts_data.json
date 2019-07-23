@@ -1,0 +1,44 @@
+[
+    {
+      "type": "IRA",
+      "id": "5200",
+      "balance": "11795763.36",
+      "changePct": "-0.08",
+      "changeAmt": "8916.69"
+    },
+    {
+      "type": "AAA",
+      "id": "3810",
+      "balance": "10050054.07",
+      "changePct": "0.07",
+      "changeAmt": "8916.69"
+    },
+    {
+      "type": "REG",
+      "id": "2019",
+      "balance": "13465679.34",
+      "changePct": "0.00",
+      "changeAmt": "0.00"
+    },
+    {
+      "type": "AAA",
+      "id": "1812",
+      "balance": "2010926.10",
+      "changePct": "0.21",
+      "changeAmt": "38881.63"
+    },
+    {
+      "type": "IRA",
+      "id": "0146",
+      "balance": "15884302.39",
+      "changePct": "-0.03",
+      "changeAmt": "7430.83"
+    },
+    {
+      "type": "AAA",
+      "id": "0029",
+      "balance": "39160334.42",
+      "changePct": "0.07",
+      "changeAmt": "31435.87"
+    }
+  ]

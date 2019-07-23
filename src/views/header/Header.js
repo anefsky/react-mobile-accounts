@@ -2,11 +2,6 @@ import React from 'react';
 import styles from './Header.module.scss';
 
 export default class Header extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    // }
-
     render() {
         return(
             <div className = { styles.container }>
@@ -20,10 +15,11 @@ export default class Header extends React.Component {
                 <div
                     onClick = { this.props.onCashSort }
                 >
-                    Sort by dollars
+                    Sort by cash
                 </div>
 
                 <div>sort key: { this.props.state.sortKey }</div>
+                <div>sort direction: { this.props.state.sortDirection }</div>
 
             </div>
         );

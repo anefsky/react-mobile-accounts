@@ -12,7 +12,8 @@ export default class Screen extends React.Component {
         this.state = {
             numberShown: 3,
             sortKey: null,
-            sortDirection: null
+            sortDirection: null,
+            data: []
         };
     }
 
@@ -27,7 +28,9 @@ export default class Screen extends React.Component {
                 >
                 </Header>
 
-                <Accounts>
+                <Accounts
+                    accounts = { this.state.data }
+                >
                 </Accounts>
 
                 <Footer
@@ -40,27 +43,42 @@ export default class Screen extends React.Component {
         );
     }
 
+    getNewSortDirection(newSortKey) {
+        let newDirection;
+        if (this.state.sortKey === null || this.state.sortKey !== newSortKey) {
+            newDirection = 'asc';
+        } else {
+            newDirection = (this.state.sortDirection === 'asc' ? 'desc' : 'asc');
+        }
+        return newDirection;
+    }
+
     handleShowMore() {
-        console.log('in Screen:handleShowMore');
-        // this.state.numberShown = 6;
         this.setState( {
             numberShown: 6
         });
+        this.doFetch();
     }
 
-    handleAccountSort() {
-        console.log('in Screen:handleAccountSort');
-        // this.state.sortKey = 'account';
+    handleAccountSort() { this.doSort('account'); }
+ 
+    handleCashSort() { this.doSort('cash') };
+
+    doSort(sortKey) {
+        const newSortDirection = this.getNewSortDirection(sortKey);
         this.setState( {
-            sortKey: 'account'
+            sortKey: sortKey,
+            sortDirection: newSortDirection
         });
     }
 
-    handleCashSort() {
-        console.log('in Screen:handleCashSort');
-        // this.state.sortKey = 'cash';
-        this.setState( {
-            sortKey: 'cash'
-        });
+    doFetch() {
+        fetch('accounts_data.json')
+            .then(response => response.json())
+            .then(data => this.setState({ data: data.slice(0, this.state.numberShown ) }))
+ }
+
+    componentDidMount() {
+        this.doFetch();
     }
 }
